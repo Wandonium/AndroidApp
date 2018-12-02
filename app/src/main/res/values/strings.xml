@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">daystarLaptops</string>
+    <string name="item_type">Item Type:</string>
+    <string name="tv_placeholder">TextView</string>
+    <string name="time_in">Time In:</string>
+    <string name="time_out">Time Out:</string>
+    <string name="owner_name">Owner Name:</string>
+    <string name="owner_id">Owner ID:</string>
+    <string name="scan">scan</string>
+    <string name="login">Login</string>
+    <string name="passwordhint">Password:</string>
+    <string name="useridhint">User ID:</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
+    <string name="searchid">Search ID</string>
+    <string name="studentID">Student Number</string>
+    <string name="user_icon">User icon</string>
+    <string name="student_id">Student ID:</string>
+    <string name="student_name">Student Name:</string>
+    <string name="item_serial_no">Item Serial No:</string>
+    <string name="click_to_get_more_info">click to get more info</string>
+    <string name="checkout_error">ERROR! This student or staff has not signed out yet.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="refresh_database">Refresh Database</string>
+    <string name="logout">Logout</string>
+    <string name="exit_app">Exit App</string>
+    <string name="daysta_logo">Daysta Logo</string>
+    <string name="date">Date:</string>
+</resources>

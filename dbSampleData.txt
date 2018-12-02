@@ -1,0 +1,66 @@
+// Convert string to date
+            SimpleDateFormat dateformat2 = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+            String strdate2 = "02-04-2013 11:35:42";
+            Date newdate = null;
+            try {
+                newdate = dateformat2.parse(strdate2);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            // enter 5 records for Locations table
+            Location location = new Location("1001", "Main Gate", "Athi River");
+            locationDao.insert(location);
+            location = new Location("1002", "Imani Hostel", "Athi River");
+            locationDao.insert(location);
+            location = new Location("1003", "Grace Hostel", "Athi River");
+            locationDao.insert(location);
+            location = new Location("1004", "Library", "Nairobi");
+            locationDao.insert(location);
+            location = new Location("1005", "Main Gate", "Nairobi");
+            locationDao.insert(location);
+
+            // enter 5 records for Admins table
+            Admin admin = new Admin("1001","Julius Ceasar", "1002", "Security Guard", "password");
+            adminDao.insert(admin);
+            admin = new Admin("1002","Mark Antony", "1003", "Security Guard", "password");
+            adminDao.insert(admin);
+            admin = new Admin("1003","Augustus Ceasar", "1004", "System Admin", "password");
+            adminDao.insert(admin);
+            admin = new Admin("1004","Nero Claudius", "1005", "System Admin", "password");
+            adminDao.insert(admin);
+            admin = new Admin("1005","Marcus Aurelius", "1003", "Security Guard", "password");
+            adminDao.insert(admin);
+            admin = new Admin("1006","Monty Python", "1001", "Security Guard", "password");
+            adminDao.insert(admin);
+
+            // enter 5 records for Owners table
+            Owner owner = new Owner("18-0030", "Beethoven", "1005");
+            ownerDao.insert(owner);
+            owner = new Owner("17-0030", "Mozart", "1004");
+            ownerDao.insert(owner);
+            owner = new Owner("16-0030", "Bach", "1003");
+            ownerDao.insert(owner);
+            owner = new Owner("15-0030", "Chopin", "1002");
+            ownerDao.insert(owner);
+            owner = new Owner("14-0030", "Handel", "1001");
+            ownerDao.insert(owner);
+            owner = new Owner("13-0553", "Hillary Wando", "1001");
+            ownerDao.insert(owner);
+
+            // enter 5 records for Items table
+            Item item = new Item("1001", "Laptop", "Hp", "CND445GY14", "14-0030", newdate, null);
+            itemDao.insert(item);
+            item = new Item("1002", "Camera", "Canon", "EF70-20040LIS", "18-0030", newdate, null);
+            itemDao.insert(item);
+            item = new Item("1003", "Laptop", "Dell", "FGJ90K890", "15-0030", newdate, null);
+            itemDao.insert(item);
+            item = new Item("1004", "Laptop", "Lenovo", "GH890JIO9", "16-0030", newdate, null);
+            itemDao.insert(item);
+            item = new Item("1005", "Camera", "Kodak", "BZ39-20040LIS", "17-0030", newdate, null);
+            itemDao.insert(item);
+            item = new Item("1006", "Speaker", "Sony", "ZX70-89040LIS", "13-0030", newdate, null);
+            itemDao.insert(item);
+            item = new Item("1007", "Microphone", "Sony", "CG97-56740LIS", "14-0030", newdate, null);
+            itemDao.insert(item);
