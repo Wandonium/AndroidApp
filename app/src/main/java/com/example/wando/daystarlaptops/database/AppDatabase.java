@@ -141,8 +141,6 @@ public abstract class AppDatabase extends RoomDatabase {
             ownerDao.insert(owner);
             owner = new Owner("14-0030", "Handel", "1001");
             ownerDao.insert(owner);
-            owner = new Owner("13-0553", "Hillary Wando", "1001");
-            ownerDao.insert(owner);
 
             // enter 5 records for Items table
             Item item = new Item("1001", "Laptop", "Hp", "CND445GY14", "14-0030", newdate, null);
@@ -154,8 +152,6 @@ public abstract class AppDatabase extends RoomDatabase {
             item = new Item("1004", "Laptop", "Lenovo", "GH890JIO9", "16-0030", newdate, null);
             itemDao.insert(item);
             item = new Item("1005", "Camera", "Kodak", "BZ39-20040LIS", "17-0030", newdate, null);
-            itemDao.insert(item);
-            item = new Item("1006", "Speaker", "Sony", "ZX70-89040LIS", "13-0030", newdate, null);
             itemDao.insert(item);
             item = new Item("1007", "Microphone", "Sony", "CG97-56740LIS", "14-0030", newdate, null);
             itemDao.insert(item);

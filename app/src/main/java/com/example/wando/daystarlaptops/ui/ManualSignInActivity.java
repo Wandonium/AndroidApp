@@ -182,6 +182,9 @@ public class ManualSignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(v.getContext(),ScanActivity.class);
+                String admin_id = getIntent().getStringExtra("ADMIN_ID");
+                intent.putExtra("ADMIN_ID", admin_id);
+                intent.putExtra("LOCATION_ID", location_id);
                 v.getContext().startActivity(intent);
             }
         });

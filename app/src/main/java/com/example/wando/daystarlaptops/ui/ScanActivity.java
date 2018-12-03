@@ -138,6 +138,10 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent=new Intent(ScanActivity.this, OwnerItemsActivity.class);
                 intent.putExtra("OWNER_ID", scanResult);
+                String admin_id = getIntent().getStringExtra("ADMIN_ID");
+                String location_id = getIntent().getStringExtra("LOCATION_ID");
+                intent.putExtra("ADMIN_ID", admin_id);
+                intent.putExtra("LOCATION_ID", location_id);
                 startActivity(intent);
             }
         });
