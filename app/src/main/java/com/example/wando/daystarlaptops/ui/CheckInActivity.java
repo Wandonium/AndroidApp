@@ -5,9 +5,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,25 +23,16 @@ import android.widget.Toast;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.AnalyticsListener;
 import com.androidnetworking.interfaces.StringRequestListener;
 import com.example.wando.daystarlaptops.R;
 import com.example.wando.daystarlaptops.database.entity.CheckIn;
-import com.example.wando.daystarlaptops.networking.ApiEndPoint;
 import com.example.wando.daystarlaptops.viewmodel.CheckInViewModel;
 import com.google.gson.Gson;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +40,7 @@ import java.util.List;
 public class CheckInActivity extends AppCompatActivity {
 
     private CheckInViewModel mCheckInViewModel;
-    private String location_id;
+    private String location_id, admin_id;
     private List<CheckIn> toUpload;
 
     public static final int OWNER_ITEMS_ACTIVITY_REQUEST_CODE = 1;
@@ -103,7 +92,7 @@ public class CheckInActivity extends AppCompatActivity {
                 for(int i = 0; i < foreignKeys.length; i++)
                 {
                     Date checkDate = new java.sql.Date(new Date().getTime());
-                    String admin_id = foreignKeys[i][0];
+                    admin_id = foreignKeys[i][0];
                     String item_id = foreignKeys[i][1];
                     String owner_id = foreignKeys[i][2];
                     maxId++;
@@ -134,6 +123,7 @@ public class CheckInActivity extends AppCompatActivity {
                     final AlertDialog alert = builder.create();
                     alert.show();
                 } else if(checkIn.getTime_out().equals(dummyTimeOut)){
+                    admin_id = checkIn.getAdmin_id();
                     CheckIn check_out = new CheckIn(checkIn);
                     check_out.setTime_out(convertTime());
                     mCheckInViewModel.deleteCheckIn(checkIn);
@@ -157,7 +147,7 @@ public class CheckInActivity extends AppCompatActivity {
                         checkTimeout = false;
                     } else {
                         int id = Integer.parseInt(checkIn.getAdmin_id());
-                        if(id == 28) {
+                        if(id == Integer.parseInt(admin_id)) {
                             toUpload.add(checkIn);
                         }
                     }

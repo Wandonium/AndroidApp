@@ -55,6 +55,7 @@ public class CheckIn {
         this.checkin_date = checkin_date;
     }
 
+    @Ignore
     public CheckIn(CheckIn other) {
         this.id = other.id;
         this.time_in = other.time_in;
@@ -66,6 +67,7 @@ public class CheckIn {
         this.checkin_date = other.checkin_date;
     }
 
+    @Ignore
     public CheckIn() {
     }
 
